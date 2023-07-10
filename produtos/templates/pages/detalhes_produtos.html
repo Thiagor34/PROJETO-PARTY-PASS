@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="{% static 'js/jquery.mask.js' %}"></script>
+    <script defer src="{% static 'js/jquery.mask.min.js' %}"></script>
+    <script defer src="{% static 'js/mask.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
+        <link rel="stylesheet" href="{% static 'css/queries.css' %}">
+    <script defer src="{% static 'js/scripts.js'%}"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Detalhes Produtos - Party Pass</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'img/logo_party_pass.png' %}" alt=""></a>
+            <a href="{% url 'home' %}">Party Pass</a>
+        </div>
+        <div class="main-nav">
+            <ul class="main-nav-list">
+                <li><a class="main-nav-link" href="{% url 'home' %}">INÍCIO</a></li>
+                <li><a class="main-nav-link" href="{% url 'ferramentas' %}">FERRAMENTAS</a></li>
+                <li><a class="main-nav-link" href="{% url 'sobre' %}">SOBRE</a></li>
+                <li><a class="nav-icon" href="{% url 'logout' %}"><ion-icon name="log-out-outline"></ion-icon></a></li>
+            </ul>
+        </div>
+        <button class="btn-mobile-nav">
+            <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+            <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
+    </nav>
+    <main>
+        <div class="itens">
+            <div class="titulo_ferramenta">
+                <h1>Detalhes do Produto</h1>
+            </div>
+            <form class="infos_produto" method="POST" enctype="multipart/form-data" action=""> {% csrf_token %}
+                <div class="nome_produto">
+                    <h2>Nome do Produto:</h2>
+                    <input name="nome" value="{{produto.nome}}" type="text" readonly class="readonly-input">
+                </div>
+                <div class="valor_produto">
+                    <h2>Valor do Produto:</h2>
+                    <input name="valor" value="{{produto.valor}}" type="text" readonly class="readonly-input">
+                </div>
+                <div class="categoria_produto">
+                    <h2>Categoria do Produto:</h2>
+                    <input name="categoria" value="{{produto.categoria}}" type="text" readonly class="readonly-input">
+                </div>
+                <div class="descricao_produto">
+                    <h2>Descrição do Produto:</h2>
+                    <input name="descricao" value="{{produto.descricao}}" type="text" readonly class="readonly-input">
+                </div>
+            </form>
+            {% if produto.id %}
+            <div class="buttons">
+                <a href="{% url 'deletar_produtos' produto.id %}" class="del">Excluir</a>
+                <a href="{% url 'editar_produtos' produto.id %}" class="alt">Alterar</a>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <div class="geral">
+            <div class="logo2">
+                <a href="{% url 'home' %}"><img src="{% static 'img/logo_party_pass.png' %}" alt=""></a>
+            </div>
+            <div class="contato">
+                <div class="telefone">
+                    <h2>Telefone</h2>
+                    <h3>+55 (48) 91234-5678</h3>
+                </div>
+                <div class="email">
+                    <h2>Email</h2>
+                    <h3><a href="mailto:party.pass.senac@gmail.com">party.pass.senac@gmail.com</a></h3>
+                </div>
+            </div>
+            <div class="infos">
+                <div class="sede">
+                    <h3>Rua Drink, 51, Florianópolis - SC</h3>
+                </div>
+                <div class="social">
+                    <h2>Siga-nos</h2>
+                    <div class="icons">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube"></i></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://github.com/pdropaullo/Party_Pass_Web"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rodape">
+            <h4>Party Pass Tecnologia LTDA. | 2023 | Todos os direitos reservados.</h4>
+        </div>
+    </footer>
+</body>
+
+</html>

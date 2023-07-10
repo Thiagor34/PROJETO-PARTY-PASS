@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 1.6rem;
+}
+:root {
+    --black: #000f08;
+    --green: #1c3738;
+    --gray: #4d4847;
+    --white-green: #f4fff8;
+    --light-green: #627a7c;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-green);
+    display: flex;
+    color: white;
+}
+
+.itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    height: 40rem;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.titulo_ferramenta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5rem;
+    justify-content: space-evenly;
+}
+
+.infos_login {
+    display: flex;
+    flex-direction: column;
+}
+
+.usuario_login,
+.senha_login,
+.email_login,
+.re-senha_login {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+input {
+    width: 25rem;
+    padding-left: .5rem;
+    margin-left: 1rem;
+    font-size: 1.6rem;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+}
+
+.buttons>button {
+    display: flex;
+    width: 10rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    color: white;
+    font-size: 2rem;
+    transition: .5s;
+}
+
+button:hover {
+    cursor: pointer;
+    color: yellow;
+}
+
+.cadastre_se{
+    color: white;
+    font-size: 2rem;
+    text-decoration: underline;
+    transition: .5s;
+}
+
+.cadastre_se:hover{
+    cursor: pointer;
+    color: yellow;
+}

@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+:root {
+    --black: #000f08;
+    --green: #1c3738;
+    --gray: #4d4847;
+    --white-green: #f4fff8;
+    --light-green: #627a7c;
+}
+
+
+.consumo {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-green);
+    display: flex;
+    color: white;
+    padding-top: 6rem;
+}
+
+.numero_consumo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20rem;
+    justify-content: space-evenly;
+}
+
+.numero_consumo>input {
+    text-align: center;
+}
+
+.numero_consumo>button {
+    width: 10rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    color: white;
+    font-size: 2rem;
+}
+
+.itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    height: 60rem;
+    margin: auto;
+    justify-content: space-evenly
+}
+
+.infos_consumo {
+    display: flex;
+    flex-direction: column;
+}
+
+.cliente_consumo,
+.codigo_produto,
+.nome_produto,
+.valor_produto,
+.quantidade,
+.total {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+input,
+select {
+    width: 25rem;
+    padding-left: .5rem;
+
+    font-size: 1.6rem;
+}
+
+.buttons {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.buttons>button {
+    display: flex;
+    width: 10rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    color: white;
+    font-size: 2rem;
+}
+
+button:hover {
+    cursor: pointer;
+    color: yellow;
+}

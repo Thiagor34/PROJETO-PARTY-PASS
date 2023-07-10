@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/realizar_consumo.css' %}">
+        <link rel="stylesheet" href="{% static 'css/queries.css' %}">
+    <script defer src="{% static 'js/scripts.js'%}"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Realizar Consumo - Party Pass</title>
+</head>
+
+<body>
+   <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'img/logo_party_pass.png' %}" alt=""></a>
+            <a href="{% url 'home' %}">Party Pass</a>
+        </div>
+        <div class="main-nav">
+            <ul class="main-nav-list">
+                <li><a class="main-nav-link" href="{% url 'home' %}">INÍCIO</a></li>
+                <li><a class="main-nav-link" href="{% url 'ferramentas' %}">FERRAMENTAS</a></li>
+                <li><a class="main-nav-link" href="{% url 'sobre' %}">SOBRE</a></li>
+                <li><a class="nav-icon" href="{% url 'logout' %}"><ion-icon name="log-out-outline"></ion-icon></a></li>
+            </ul>
+        </div>
+        <button class="btn-mobile-nav">
+            <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+            <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
+    </nav>
+    <main class="consumo">
+        <div class="itens">
+            <div class="numero_consumo">
+                <h1>Realizar Consumo</h1>
+                <h2>Número da Comanda</h2>
+                <p name="id">{{cliente.id}}</p>
+                <h2>Cliente:</h2>
+                <p name="nome">{{cliente.nome}}</p>
+            </div>
+            <div class="infos_consumo">
+                <div class="codigo_produto">
+                    
+                    <form action="{%  url 'busca_prod' %}" method="GET">
+                    <h2>Código do Produto:</h2>
+                    <input type="text" class="cod_prod" name="produto_id" placeholder="Pesquisar código" value="{{ produto_id }}">
+                    <h2>Quantidade:</h2>
+                    <input type="number" class="quantidade" value="{{ quantidade }}">
+                    <button class="btn-search" type="submit">Pesquisar</button>
+
+                </form>
+                </div>
+                </div>
+                
+        </div>
+    </main>
+    <footer>
+        <div class="geral">
+            <div class="logo2">
+                <a href="{% url 'home' %}"><img src="{% static 'img/logo_party_pass.png' %}" alt=""></a>
+            </div>
+            <div class="contato">
+                <div class="telefone">
+                    <h2>Telefone</h2>
+                    <h3>+55 (48) 91234-5678</h3>
+                </div>
+                <div class="email">
+                    <h2>Email</h2>
+                    <h3><a href="mailto:party.pass.senac@gmail.com">party.pass.senac@gmail.com</a></h3>
+                </div>
+            </div>
+            <div class="infos">
+                <div class="sede">
+                    <h3>Rua Drink, 51, Florianópolis - SC</h3>
+                </div>
+                <div class="social">
+                    <h2>Siga-nos</h2>
+                    <div class="icons">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube"></i></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://github.com/pdropaullo/Party_Pass_Web"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rodape">
+            <h4>Party Pass Tecnologia LTDA. | 2023 | Todos os direitos reservados.</h4>
+        </div>
+    </footer>
+</body>
+
+</html>

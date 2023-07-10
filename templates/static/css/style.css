@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+:root {
+    --black: #000f08;
+    --green: #1c3738;
+    --gray: #4d4847;
+    --white-green: #f4fff8;
+    --light-green: #627a7c;
+}
+
+.grid {
+  display: grid;
+  /* column-gap: 6.4rem;
+  row-gap: 9.6rem; */
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+nav {
+    width: 100%;
+    height: 8rem;
+    font-size: 2.4rem;
+    background-color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+    z-index: 999;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: flex-start;
+}
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  justify-items: center;
+  gap: 4.8rem;
+}
+
+/* MOBILE */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #fff;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: yellow;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: flex-end;
+}
+
+.logo>a,
+.menus>a,
+.perfil>a {
+    color: white;
+    padding: 0 1rem;
+    transition: .5s;
+}
+
+
+
+.nav-icon {
+    color: #FFF;
+    padding: 0 1rem;
+    transition: .5s;
+}
+
+.logo>a:hover,
+.menus>a:hover,
+.perfil>a:hover {
+    color: yellow;
+}
+
+.logo>a>img,
+.perfil>a>img {
+    width: 6rem;
+    border-radius: 3rem;
+    display: flex;
+}
+
+#inicio {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: linear-gradient(to right bottom, 
+    rgba(99, 122, 125, 0.5), 
+    rgba(27, 53, 54, 0.5)), 
+    url(https://media.istockphoto.com/id/624494724/pt/foto/empty-wooden-bar-counter.jpg?s=612x612&w=0&k=20&c=3aZOArTwzBia7EDGy-eqoYc4IKMp9cw5tOVh2PjaOSg=);
+    background-size: cover;
+    background-position: top;
+}
+
+.welcome {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+    font-size: 1.5rem;
+}
+
+#down {
+    color: white;
+    font-size: 3.2rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.main_index {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding-top: 10rem;
+
+}
+
+.ferramentas {
+    width: 70%;
+    height: 25rem;
+
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 10rem;
+    gap: 3rem;
+}
+
+.ferramentas__title {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 5rem rgba(0, 0, 0, .9);
+}
+
+.cliente,
+.produto,
+.comanda {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.cliente>h1,
+.produto>h1,
+.comanda>h1 {
+    font-size: 3.2rem;
+    text-shadow: 0 0 5rem rgba(0, 0, 0, .9);
+    font-weight: 400;
+}
+
+.btn__container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.btn__ferramentas:link,
+.btn__ferramentas:visited{
+    color: white;
+    background-color: var(--green);
+    font-size: 2.4rem;
+    border-radius: .5rem;
+    width: 20rem;
+    padding: .8rem;
+    align-self: center;
+    justify-self: center;
+}
+
+.btn__ferramentas:hover,
+.btn__ferramentas:active {
+    cursor: pointer;
+    color: yellow;
+}
+
+.sobre {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--gray);
+    color: white;
+    padding-top: 5rem;
+    font-size: 1.2rem;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    height: 20rem;
+    justify-content: space-evenly;
+}
+
+.cards {
+ 
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.card {
+    width: 20rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.card>img {
+    width: 90%;
+    border-radius: 50%;
+}
+
+.personal_icons>a>i {
+    color: white;
+    font-size: 3.2rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    transition: .5s;
+}
+
+.personal_icons>a>i:hover {
+    color: yellow;
+}
+
+footer {
+    width: 100%;
+    height: 20rem;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    color: white;
+}
+
+.geral {
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo2>a>img {
+    width: 15rem;
+}
+
+.contato,
+.infos {
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    justify-content: space-between;
+}
+
+.icons>a>i {
+    color: white;
+    font-size: 3.2rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    transition: .5s;
+}
+
+.icons>a>i:hover {
+    color: yellow;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    transition: .5s;
+}
+
+.email>h3>a{
+    color: white;
+}
